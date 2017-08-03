@@ -1,0 +1,30 @@
+@header-height: 40px;
+@main-width: 1200px;
+html,
+body {
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    .header {
+        position: fixed;
+        left: 0;
+        right: 0;
+        height: @header-height;
+    }
+
+    .main {
+        padding-top: @header-height;
+        // width: @main-width;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.border-yellow {
+    border: 1px solid yellow;
+}
