@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Tabs, Icon } from 'antd';
 
-import restHub from '~comm/services/restHub';
+// import restHub from '~comm/services/restHub';
+import restHub from  'isomorphic-fetch';
 import TimeLine from '../TimeLine';
 
 const TabPane = Tabs.TabPane;
@@ -14,9 +15,18 @@ class TopTabs extends Component {
 	
 	getTest = () => {
 		console.log('get test');
-		restHub.get('http://www.login.com:8899/', function (errorMsg, jsonResult) {
-			console.log('hello');
+
+	restHub('http://www.login.com:8899/login', {
+			method: 'GET'
+		}).then(function (response) {
+			console.log(response, 'res');
+			return response.json();
+		}).then(function (json) {
+			console.log('parsed json', json);
+		}).catch(function (ex) {
+			console.log('parsed failed', ex);
 		});
+
 	}
 
     render() {

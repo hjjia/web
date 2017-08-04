@@ -32,7 +32,10 @@ function check404(res) {
 }
 
 function jsonParse(res) {
+	// console.log(res, 'res');
     try {
+		// console.log(res.json(), 'json');
+        // console.log(res.json().then(jsonResult => ({ ...res, jsonResult })), 'res re');
         return res.json().then(jsonResult => ({ ...res, jsonResult }));
     } catch (e) {
         // eslint-disable-next-line no-console
