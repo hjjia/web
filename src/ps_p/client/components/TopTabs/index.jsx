@@ -16,7 +16,7 @@ class TopTabs extends Component {
 	getTest = () => {
 		console.log('get test');
 
-	restHub('http://www.login.com:8899/login', {
+	restHub('http://127.0.0.1:8899/login', {
 			method: 'GET'
 		}).then(function (response) {
 			console.log(response, 'res');

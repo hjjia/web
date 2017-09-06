@@ -6,7 +6,7 @@ const baseConfig = require('../../webpack.base.config');
 const { __DEV__, __PROD__, __TEST__ } = config.globals;
 const APP_ENTRY = path.resolve(__dirname, './client/index.js');
 
-config.host = '192.168.150.128';
+// config.host = '192.168.150.128';
 
 baseConfig.entry.cs = __DEV__
     ? [`webpack-dev-server/client?http://${config.host}:${config.login.port}/`, 'webpack/hot/only-dev-server', 'babel-polyfill', APP_ENTRY]

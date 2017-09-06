@@ -4,7 +4,7 @@ const webpackConfig = require('../webpack.config.js');
 const config = require('../../../config');
 
 const numGameConfig = config.login;
-config.host = '192.168.150.128';
+// config.host = '192.168.150.128';
 
 const compiler = webpack(webpackConfig);
 const server = new WebpackDevServer(compiler, {disableHostCheck: true,
